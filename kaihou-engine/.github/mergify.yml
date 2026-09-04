@@ -1,0 +1,22 @@
+# .github/mergify.yml
+# Automate merges when PRs satisfy required conditions.
+
+pull_request_rules:
+  - name: "Automatic merge on CI success and review"
+    conditions:
+      - "#approved-reviews-by>=1"
+      - "status-success=ci/circleci"
+      - "label!=work-in-progress"
+    actions:
+      merge:
+        method: squash
+        commit_message: "title"
+        # Optionally delete the branch after merge
+        delete_head_branch: true
+
+  - name: "Label stale PRs"
+    conditions:
+      - "status-failure=ci/circleci"
+    actions:
+      label:
+        add: ["needs-fix"]

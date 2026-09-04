@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "schedule": ["before 5am on monday"],
+  "automerge": true,
+  "automergeType": "branch",
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 10,
+  "semanticCommits": "enabled",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "groupName": "Major updates"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "groupName": "Minor & patch updates"
+    }
+  ]
+}

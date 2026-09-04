@@ -1,0 +1,14 @@
+# plugins.yaml
+# Register optional plugin modules that can hook into the pipeline.
+# The orchestrator will import and call a `process(data: dict) -> dict`
+# function from each listed module, in the order they appear.
+
+plugins:
+  - kaihou_engine.plugins.llm_connectors.ollama_connector.OllamaConnector
+  - kaihou_engine.plugins.llm_connectors.decider_plugin.SimpleDecider
+  - kaihou_engine.plugins.terminology.glossary_plugin.GlossaryPlugin
+  - kaihou_engine.plugins.validators.number_validator.NumberValidator
+  - kaihou_engine.plugins.validators.entity_validator.EntityValidator
+  - kaihou_engine.plugins.validators.terminology_validator.TerminologyValidator
+
+  # Add more plugin paths as needed.

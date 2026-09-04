@@ -1,0 +1,12 @@
+# models.yaml
+# Define spaCy language models for each supported language.
+# The orchestrator will load the appropriate model based on the language of the input.
+
+- language: en
+  spacy_model: en_core_web_sm
+
+- language: fr
+  spacy_model: fr_core_news_sm
+
+- language: es
+  spacy_model: es_core_news_sm

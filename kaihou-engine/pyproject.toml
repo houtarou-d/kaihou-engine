@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kaihou-engine"
+version = "0.1.0"
+description = "Orchestration layer for Kaihou NLP Engine and related pipelines"
+readme = "README.md"
+authors = [{name = "Houtarou", email = "houtarou@example.com"}]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "click",
+    "pydantic>=2.0",
+    "pyyaml",
+    "rich",
+    # The analysis library – assume it is installed via pip from the repo or local path
+    # "kaihou-nlp-engine @ git+https://github.com/houtarou-d/kaihou-nlp-engine.git",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+[project.scripts]
+kaihou = "kaihou_engine.orchestrator:main"

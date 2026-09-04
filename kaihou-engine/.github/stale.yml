@@ -1,0 +1,29 @@
+# .github/stale.yml
+# Configuration for the Stale bot – marks issues/PRs as stale after inactivity.
+
+# Number of days of inactivity before an issue/PR becomes stale
+daysUntilStale: 30
+# Number of days after becoming stale before it is closed
+daysUntilClose: 7
+
+# Pull request specific labels
+pulls:
+  staleLabel: "stale"
+  closeLabel: "closed-stale"
+  # Exempt certain labels from being marked stale
+  exemptLabels:
+    - "work-in-progress"
+    - "do not stale"
+
+# Issue specific labels
+issues:
+  staleLabel: "stale"
+  closeLabel: "closed-stale"
+  exemptLabels:
+    - "pinned"
+    - "good first issue"
+
+# Message posted when marking stale
+message: |
+  This item has been automatically marked as stale because it has not had recent activity.
+  It will be closed if no further activity occurs.

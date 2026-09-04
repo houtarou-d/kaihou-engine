@@ -1,0 +1,11 @@
+# glossaries.yaml
+# Mapping of source terms to preferred translations.
+# Plugins can use this to replace terms after translation.
+
+en:
+  hello: "greetings"
+  world: "earth"
+
+fr:
+  bonjour: "greetings"
+  monde: "earth"

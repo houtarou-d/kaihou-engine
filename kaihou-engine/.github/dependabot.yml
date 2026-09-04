@@ -1,0 +1,22 @@
+# Dependabot configuration for GitHub Actions and Python dependencies
+# This file lives at .github/dependabot.yml
+# It tells Dependabot to check for updates to the Python package manager (pip) and workflow files.
+version: 2
+updates:
+  # Enable version updates for Python packages in pyproject.toml / requirements files
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    # Allow automerge for non‑breaking updates
+    automerge: true
+    automerge-type: "pr"
+  # Enable version updates for GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    automerge: true
+    automerge-type: "pr"

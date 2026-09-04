@@ -1,0 +1,27 @@
+# pipeline.yaml
+# Ordered list of processing steps for Kaihou Engine.
+# Each step may have its own arguments; the orchestrator can interpret them.
+
+steps:
+  - name: analyze
+    args: {}
+  - name: translate
+    args:
+      target_language: en
+  - name: postprocess
+    args: {}
+
+use_panel: true
+
+adaptive_mode:
+  enabled: true
+  criteria:
+    - if: "len(source_text.split()) > 10"
+      then: true
+    - default: false
+
+models:
+  - language: en
+    spacy_model: en_core_web_sm
+  - language: fr
+    spacy_model: fr_core_news_sm
