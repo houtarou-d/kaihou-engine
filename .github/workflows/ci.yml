@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Add vendored libs to PYTHONPATH
-        run: echo "PYTHONPATH=$(pwd)/libs" >> $GITHUB_ENV
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
