@@ -1,0 +1,3 @@
+[submodule "kaihou-nlp-engine"]
+	path = kaihou-nlp-engine
+	url = https://github.com/houtarou-d/kaihou-nlp-engine.git
